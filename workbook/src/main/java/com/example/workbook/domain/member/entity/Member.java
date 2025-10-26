@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -23,10 +24,10 @@ public class Member {
 
     @Column(name = "gender")
     @Enumerated(EnumType.STRING)
-    private Gender Gender;
+    private Gender gender;
 
     @Column(name="birth")
-    private String birth;
+    private LocalDate birth;
 
     @Column(name="address", length=25)
     private String address;
