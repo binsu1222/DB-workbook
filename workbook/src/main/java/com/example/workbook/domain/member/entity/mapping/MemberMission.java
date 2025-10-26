@@ -1,5 +1,6 @@
 package com.example.workbook.domain.member.entity.mapping;
 import com.example.workbook.domain.member.entity.Member;
+import com.example.workbook.domain.member.enums.Status;
 import com.example.workbook.domain.mission.entity.Mission;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,7 +19,7 @@ public class MemberMission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pirmember_id", nullable = false) // PK 컬럼명
+    @Column(name = "pmember_id", nullable = false) // PK 컬럼명
     private Long pirmemberId;
 
     @Column(name = "created_at")
@@ -36,5 +37,5 @@ public class MemberMission {
     private Mission mission;
 
     @Column(name = "status")
-    private Integer status;
+    private Status status;
 }
