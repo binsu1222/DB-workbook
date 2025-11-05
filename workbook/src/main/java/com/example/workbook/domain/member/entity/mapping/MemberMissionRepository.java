@@ -7,13 +7,13 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface MemberMissionRepository extends JpaRepository<MemberMission, Long> {
+public interface MemberMissionRepository extends JpaRepository<MemberMission, Long>{
 
-    @Query("SELECT pm.point, pm.description, m.description" +
-            "FROM MemberMission pm " +
-            "JOIN pm.mission m " +
-            "WHERE pm.member.id = :memberId AND pm.status = :status " +
-            "ORDER BY pm.createdAt DESC")
+    @Query("SELECT m.point, m.description, m.description " +
+            "FROM MemberMission p " +
+            "JOIN p.mission m " +
+            "WHERE p.id = :memberId AND p.status = :status " +
+            "ORDER BY p.createdAt DESC")
     List<Object[]> findMemberMissionsByStatus(
             @Param("memberId") Long memberId,
             @Param("status") Status status);
