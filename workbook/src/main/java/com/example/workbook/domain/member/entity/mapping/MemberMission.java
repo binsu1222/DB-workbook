@@ -19,8 +19,8 @@ public class MemberMission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pmember_id", nullable = false) // PK 컬럼명
-    private Long pirmemberId;
+    @Column(nullable = false) // PK 컬럼명
+    private Long id;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
